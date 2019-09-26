@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +6,7 @@
 
         <title>Federico Zacayan</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="../css/prism.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/prism.css" rel="stylesheet" type="text/css"/>
 <style>
 p{
     margin: 16px auto;
@@ -92,7 +91,7 @@ services:
     <pre><code class="language-bash">sudo docker-compose up</code></pre>
 
     <p>And test the application on your browser.</p>
-    <pre><code class="language-bash">http://localhost:3000/</code></pre>
+    <pre><code class="language-bash">/:3000/</code></pre>
 
 
     <p>You must install a tool to make requests easily. On of the most popular now is Postman. So, just google it and install it.</p>
@@ -455,7 +454,7 @@ router.get(&quot;/&quot;, (req, res, next) =&gt; {
             quantity: doc.quantity,
             request: {
               type: &quot;GET&quot;,
-              url: &quot;http://localhost:3000/orders/&quot; + doc._id
+              url: &quot;/:3000/orders/&quot; + doc._id
             }
           };
         })
@@ -494,7 +493,7 @@ router.post(&quot;/&quot;, (req, res, next) =&gt; {
         },
         request: {
           type: &quot;GET&quot;,
-          url: &quot;http://localhost:3000/orders/&quot; + result._id
+          url: &quot;/:3000/orders/&quot; + result._id
         }
       });
     })
@@ -519,7 +518,7 @@ router.get(&quot;/:orderId&quot;, (req, res, next) =&gt; {
         order: order,
         request: {
           type: &quot;GET&quot;,
-          url: &quot;http://localhost:3000/orders&quot;
+          url: &quot;/:3000/orders&quot;
         }
       });
     })
@@ -538,7 +537,7 @@ router.delete(&quot;/:orderId&quot;, (req, res, next) =&gt; {
         message: &quot;Order deleted&quot;,
         request: {
           type: &quot;POST&quot;,
-          url: &quot;http://localhost:3000/orders&quot;,
+          url: &quot;/:3000/orders&quot;,
           body: { productId: &quot;ID&quot;, quantity: &quot;Number&quot; }
         }
       });
@@ -575,7 +574,7 @@ router.get(&quot;/&quot;, (req, res, next) =&gt; {
             _id: doc._id,
             request: {
               type: &quot;GET&quot;,
-              url: &quot;http://localhost:3000/products/&quot; + doc._id
+              url: &quot;/:3000/products/&quot; + doc._id
             }
           };
         })
@@ -614,7 +613,7 @@ router.post(&quot;/&quot;, (req, res, next) =&gt; {
             _id: result._id,
             request: {
                 type: 'GET',
-                url: &quot;http://localhost:3000/products/&quot; + result._id
+                url: &quot;/:3000/products/&quot; + result._id
             }
         }
       });
@@ -639,7 +638,7 @@ router.get(&quot;/:productId&quot;, (req, res, next) =&gt; {
             product: doc,
             request: {
                 type: 'GET',
-                url: 'http://localhost:3000/products'
+                url: '/:3000/products'
             }
         });
       } else {
@@ -667,7 +666,7 @@ router.patch(&quot;/:productId&quot;, (req, res, next) =&gt; {
           message: 'Product updated',
           request: {
               type: 'GET',
-              url: 'http://localhost:3000/products/' + id
+              url: '/:3000/products/' + id
           }
       });
     })
@@ -688,7 +687,7 @@ router.delete(&quot;/:productId&quot;, (req, res, next) =&gt; {
           message: 'Product deleted',
           request: {
               type: 'POST',
-              url: 'http://localhost:3000/products',
+              url: '/:3000/products',
               body: { name: 'String', price: 'Number' }
           }
       });
@@ -776,7 +775,7 @@ api_rest@_with_node:~$ </code></pre>
 </div>    
         </div>
     </body>
-    <script type="text/javascript" src="../js/prism.js"></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
