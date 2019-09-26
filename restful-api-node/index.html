@@ -116,7 +116,7 @@ services:
     <pre><code class="language-bash">sudo docker-compose up</code></pre>
 
     <p>And test the application on your browser.</p>
-    <pre><code class="language-bash">/:3000/</code></pre>
+    <pre><code class="language-bash">http://localhost:3000/</code></pre>
 
 
     <p>You must install a tool to make requests easily. On of the most popular now is Postman. So, just google it and install it.</p>
@@ -479,7 +479,7 @@ router.get(&quot;/&quot;, (req, res, next) =&gt; {
             quantity: doc.quantity,
             request: {
               type: &quot;GET&quot;,
-              url: &quot;/:3000/orders/&quot; + doc._id
+              url: &quot;http://localhost:3000/orders/&quot; + doc._id
             }
           };
         })
@@ -518,7 +518,7 @@ router.post(&quot;/&quot;, (req, res, next) =&gt; {
         },
         request: {
           type: &quot;GET&quot;,
-          url: &quot;/:3000/orders/&quot; + result._id
+          url: &quot;http://localhost:3000/orders/&quot; + result._id
         }
       });
     })
@@ -543,7 +543,7 @@ router.get(&quot;/:orderId&quot;, (req, res, next) =&gt; {
         order: order,
         request: {
           type: &quot;GET&quot;,
-          url: &quot;/:3000/orders&quot;
+          url: &quot;http://localhost:3000/orders&quot;
         }
       });
     })
@@ -562,7 +562,7 @@ router.delete(&quot;/:orderId&quot;, (req, res, next) =&gt; {
         message: &quot;Order deleted&quot;,
         request: {
           type: &quot;POST&quot;,
-          url: &quot;/:3000/orders&quot;,
+          url: &quot;http://localhost:3000/orders&quot;,
           body: { productId: &quot;ID&quot;, quantity: &quot;Number&quot; }
         }
       });
@@ -599,7 +599,7 @@ router.get(&quot;/&quot;, (req, res, next) =&gt; {
             _id: doc._id,
             request: {
               type: &quot;GET&quot;,
-              url: &quot;/:3000/products/&quot; + doc._id
+              url: &quot;http://localhost:3000/products/&quot; + doc._id
             }
           };
         })
@@ -638,7 +638,7 @@ router.post(&quot;/&quot;, (req, res, next) =&gt; {
             _id: result._id,
             request: {
                 type: 'GET',
-                url: &quot;/:3000/products/&quot; + result._id
+                url: &quot;http://localhost:3000/products/&quot; + result._id
             }
         }
       });
@@ -663,7 +663,7 @@ router.get(&quot;/:productId&quot;, (req, res, next) =&gt; {
             product: doc,
             request: {
                 type: 'GET',
-                url: '/:3000/products'
+                url: 'http://localhost:3000/products'
             }
         });
       } else {
@@ -691,7 +691,7 @@ router.patch(&quot;/:productId&quot;, (req, res, next) =&gt; {
           message: 'Product updated',
           request: {
               type: 'GET',
-              url: '/:3000/products/' + id
+              url: 'http://localhost:3000/products/' + id
           }
       });
     })
@@ -712,7 +712,7 @@ router.delete(&quot;/:productId&quot;, (req, res, next) =&gt; {
           message: 'Product deleted',
           request: {
               type: 'POST',
-              url: '/:3000/products',
+              url: 'http://localhost:3000/products',
               body: { name: 'String', price: 'Number' }
           }
       });
