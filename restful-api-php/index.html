@@ -104,7 +104,7 @@ DB_PASSWORD=secret
     <pre><code class="language-bash">sudo chmod -R 777  .</code></pre>
 
     <p>Check laravel application.</p>
-    <pre><code class="language-bash">/</code></pre>
+    <pre><code class="language-bash">http://localhost</code></pre>
 
 
 
@@ -222,7 +222,7 @@ Query OK, 0 rows affected (0.14 sec)</code></pre>
     ...
 }</code></pre>
 
-    <p>With this step, we mapping the url /api/Product with the Product model.</p>
+    <p>With this step, we mapping the url http://localhost/api/Product with the Product model.</p>
     <p>That enable to inject an instance of the model in the methods of the ProductController, as we will see in the next steps.</p>
 
     <p>In app/Http/Controllers/ProductController.php we have to write the following methods.</p>
@@ -255,7 +255,7 @@ public function destroy(Product $product) {
 
 
     <p>Now, you cant test the aplication with any API Rest consumer. In the following url.</p>
-    <pre><code class="language-javascript">/Product</code></pre>
+    <pre><code class="language-javascript">http://localhost/Product</code></pre>
 
 
 </div>
